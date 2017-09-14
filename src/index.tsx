@@ -17,8 +17,10 @@ class Game extends React.Component<GameProps, GameState> {
 
     render() {
         return (
-            <div>
-              Hello World!
+            <div id="game">
+              <div id="circle">
+                <div id="control">q</div>
+              </div>
             </div>
         );
     }
