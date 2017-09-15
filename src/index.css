@@ -6,7 +6,7 @@ body {
 }
 
 #game {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -19,15 +19,89 @@ body {
 }
 
 #circle {
+  position: absolute;
   border: 10px solid black;
 	border-radius: 50%;
 	width: 300px;
   height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #control {
   border: 5px solid black;
 	border-radius: 50%;
-	width: 100px;
-  height: 100px;
+	width: 150px;
+  height: 150px;
+  background-color: white;
+  z-index: 5;
 }
+
+#vertical {
+  position: absolute;
+	width: 10px;
+  height: 300px;
+  background-color: black;
+  z-index: 3; 
+}
+
+#horizontal {
+  position: absolute;
+	width: 300px;
+  height: 10px;
+  background-color: black;
+  z-index: 4; 
+}
+
+#quarter-circle-top-left {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: #006699;
+  border-radius: 0 0 140px 0;
+  -moz-border-radius: 0 0 140px 0;
+  -webkit-border-radius: 0 0 140px 0;
+  z-index: 2;
+  margin-top: 70px;
+  margin-left: 70px;
+}
+
+#quarter-circle-top-right {
+  position: absolute;
+  margin-top: 70px;
+  margin-right: 70px;
+  width: 140px;
+  height: 140px;
+  background: #117300;
+  border-radius: 0 0 0 140px;
+  -moz-border-radius: 0 0 0 140px;
+  -webkit-border-radius: 0 0 0 140px;
+  z-index: 20;
+}
+/*
+#quarter-circle-bottom-left {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: #006699;
+  border-radius: 0 140px 0 0;
+  -moz-border-radius: 0 140px 0 0;
+  -webkit-border-radius: 0 140px 0 0;
+  z-index: 2;
+  top: 20px;
+  margin-left: 70px;
+}
+
+#quarter-circle-bottom-right {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: #117300;
+  border-radius: 140px 0 0 0;
+  -moz-border-radius: 140px 0 0 0;
+  -webkit-border-radius: 140px 0 0 0;
+  z-index: 2;
+  top: 20px;
+  left: 84px;
+}*/

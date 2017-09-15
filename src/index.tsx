@@ -19,7 +19,13 @@ class Game extends React.Component<GameProps, GameState> {
         return (
             <div id="game">
               <div id="circle">
-                <div id="control">q</div>
+                <div id="vertical" />
+                <div id="horizontal" />
+                <div id="quarter-circle-top-left" />
+                <div id="quarter-circle-top-right" />
+                <div id="quarter-circle-bottom-left" />
+                <div id="quarter-circle-bottom-right" />
+                <div id="control" />
               </div>
             </div>
         );
