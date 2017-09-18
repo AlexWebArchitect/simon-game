@@ -8,28 +8,28 @@ interface GameProps { }
 interface GameState { }
 
 class Game extends React.Component<GameProps, GameState> {
-    constructor() {
-        super();
-        this.state = {
+  constructor() {
+    super();
+    this.state = {
 
-        };
-    }
+    };
+  }
 
-    render() {
-        return (
-            <div id="game">
-              <div id="circle">
-                <div id="vertical" />
-                <div id="horizontal" />
-                <div id="quarter-circle-top-left" />
-                <div id="quarter-circle-top-right" />
-                <div id="quarter-circle-bottom-left" />
-                <div id="quarter-circle-bottom-right" />
-                <div id="control" />
-              </div>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div id="game">
+        <div id="circle">
+          <div id="vertical" />
+          <div id="horizontal" />
+          <div id="quarter-circle-top-left" />
+          <div id="quarter-circle-top-right" />
+          <div id="quarter-circle-bottom-left" />
+          <div id="quarter-circle-bottom-right" />
+          <div id="control" />
+        </div>
+      </div>
+    );
+  }
 }
 
 ReactDOM.render(<Game />, document.getElementById('root'));
