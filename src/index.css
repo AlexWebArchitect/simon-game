@@ -19,36 +19,40 @@ body {
 }
 
 #circle {
-  position: absolute;
   border: 10px solid black;
 	border-radius: 50%;
 	width: 300px;
   height: 300px;
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
 }
 
 #control {
+  position: absolute;
   border: 5px solid black;
 	border-radius: 50%;
 	width: 150px;
   height: 150px;
+  margin-top: 65px;
+  margin-left: 65px;
   background-color: white;
   z-index: 5;
 }
 
 #vertical {
   position: absolute;
+  margin-left: 137px;
 	width: 10px;
-  height: 300px;
+  height: 290px;
   background-color: black;
   z-index: 3; 
 }
 
 #horizontal {
   position: absolute;
-	width: 300px;
+  margin-top: 138px;
+  width: 290px;
   height: 10px;
   background-color: black;
   z-index: 4; 
@@ -63,13 +67,13 @@ body {
   -moz-border-radius: 0 0 140px 0;
   -webkit-border-radius: 0 0 140px 0;
   z-index: 2;
-  margin-top: 70px;
-  margin-left: 70px;
+  margin-top: 140px;
+  margin-left: 140px;
 }
 
 #quarter-circle-top-right {
   position: absolute;
-  margin-top: 70px;
+  margin-top: 140px;
   margin-right: 20px;
   width: 140px;
   height: 140px;
@@ -77,9 +81,9 @@ body {
   border-radius: 0 0 0 140px;
   -moz-border-radius: 0 0 0 140px;
   -webkit-border-radius: 0 0 0 140px;
-  z-index: 20;
+  z-index: 2;
 }
-/*
+
 #quarter-circle-bottom-left {
   position: absolute;
   width: 140px;
@@ -89,8 +93,7 @@ body {
   -moz-border-radius: 0 140px 0 0;
   -webkit-border-radius: 0 140px 0 0;
   z-index: 2;
-  top: 20px;
-  margin-left: 70px;
+  margin-left: 140px;
 }
 
 #quarter-circle-bottom-right {
@@ -102,6 +105,4 @@ body {
   -moz-border-radius: 140px 0 0 0;
   -webkit-border-radius: 140px 0 0 0;
   z-index: 2;
-  top: 20px;
-  left: 84px;
-}*/
+}
