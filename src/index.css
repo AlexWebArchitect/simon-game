@@ -58,7 +58,7 @@ body {
   z-index: 4; 
 }
 
-#quarter-circle-top-left {
+#quarter-circle-bottom-right {
   position: absolute;
   width: 140px;
   height: 140px;
@@ -71,7 +71,7 @@ body {
   margin-left: 140px;
 }
 
-#quarter-circle-top-right {
+#quarter-circle-bottom-left {
   position: absolute;
   margin-top: 140px;
   margin-right: 20px;
@@ -84,7 +84,7 @@ body {
   z-index: 2;
 }
 
-#quarter-circle-bottom-left {
+#quarter-circle-top-right {
   position: absolute;
   width: 140px;
   height: 140px;
@@ -96,7 +96,7 @@ body {
   margin-left: 140px;
 }
 
-#quarter-circle-bottom-right {
+#quarter-circle-top-left {
   position: absolute;
   width: 140px;
   height: 140px;
