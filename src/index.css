@@ -62,7 +62,7 @@ body {
   position: absolute;
   width: 140px;
   height: 140px;
-  background: #006699;
+  background: #094a8f;
   border-radius: 0 0 140px 0;
   -moz-border-radius: 0 0 140px 0;
   -webkit-border-radius: 0 0 140px 0;
@@ -77,7 +77,7 @@ body {
   margin-right: 20px;
   width: 140px;
   height: 140px;
-  background: #117300;
+  background: #cca707;
   border-radius: 0 0 0 140px;
   -moz-border-radius: 0 0 0 140px;
   -webkit-border-radius: 0 0 0 140px;
@@ -88,7 +88,7 @@ body {
   position: absolute;
   width: 140px;
   height: 140px;
-  background: #006699;
+  background: #9f0f17;
   border-radius: 0 140px 0 0;
   -moz-border-radius: 0 140px 0 0;
   -webkit-border-radius: 0 140px 0 0;
@@ -100,7 +100,7 @@ body {
   position: absolute;
   width: 140px;
   height: 140px;
-  background: #117300;
+  background: #00a74a;
   border-radius: 140px 0 0 0;
   -moz-border-radius: 140px 0 0 0;
   -webkit-border-radius: 140px 0 0 0;
