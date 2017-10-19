@@ -17,17 +17,18 @@ body {
 }
 
 #circle {
-  border: 10px solid black;
+  border: 10px solid #333333;
 	border-radius: 50%;
 	width: 300px;
   height: 300px;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 #control {
   position: absolute;
-  border: 5px solid black;
+  border: 5px solid #333333;
 	border-radius: 50%;
 	width: 150px;
   height: 150px;
@@ -42,7 +43,7 @@ body {
   margin-left: 137px;
 	width: 10px;
   height: 290px;
-  background-color: black;
+  background-color: #333333;
   z-index: 3; 
 }
 
@@ -51,7 +52,7 @@ body {
   margin-top: 138px;
   width: 290px;
   height: 10px;
-  background-color: black;
+  background-color: #333333;
   z-index: 4; 
 }
 
@@ -104,15 +105,25 @@ body {
   z-index: 2;
 }
 
+#logo {
+  font-size: 200%;
+}
+
+#reg {
+  margin-bottom: 10px;
+  font-size: 50%;
+}
+
 @media all and (min-width: 700px) {
   #circle {
-    border: 20px solid black;
+    border: 20px solid #333333;
     width: 600px;
     height: 600px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5)
   }
 
   #control {
-    border: 10px solid black;
+    border: 10px solid #333333;
     width: 300px;
     height: 300px;
     margin-top: 130px;
