@@ -27,8 +27,7 @@ class Game extends React.Component<GameProps, GameState> {
           <div id="quarter-circle-top-left" />
           <div id="control">
             <div id="logo">
-              <b>Simon</b>
-              <b id="reg">&reg;</b>
+              <b>Simon<span id="sup">&reg;</span></b>
             </div>
           </div>
         </div>

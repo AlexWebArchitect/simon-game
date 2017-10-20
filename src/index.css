@@ -107,11 +107,13 @@ body {
 
 #logo {
   font-size: 200%;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 
-#reg {
-  margin-bottom: 10px;
+#sup {
   font-size: 50%;
+  vertical-align: super;
 }
 
 @media all and (min-width: 700px) {
@@ -177,5 +179,11 @@ body {
     border-radius: 280px 0 0 0;
     -moz-border-radius: 280px 0 0 0;
     -webkit-border-radius: 280px 0 0 0;
+  }
+
+  #logo {
+    font-size: 400%;
+    margin-top: 20px;
+    margin-left: 40px;
   }
 }
