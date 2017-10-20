@@ -5,6 +5,13 @@ body {
   background: url(https://i.imgur.com/i49b44f.jpg);
 }
 
+@font-face {
+  font-family: 'Simon';
+  font-weight: 900;
+  src: url(https://fonts.gstatic.com/s/alfaslabone/v7/Qx6FPcitRwTC_k88tLPc-TxObtw73-qQgbr7Be51v5c.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
 #game {
   display: flex;
   position: absolute;
@@ -106,13 +113,14 @@ body {
 }
 
 #logo {
-  font-size: 200%;
-  margin-top: 10px;
-  margin-left: 20px;
+  font-size: 240%;
+  margin-top: 24px;
+  margin-left: 10px;
+  font-family: Simon;
 }
 
 #sup {
-  font-size: 50%;
+  font-size: 30%;
   vertical-align: super;
 }
 
@@ -182,8 +190,8 @@ body {
   }
 
   #logo {
-    font-size: 400%;
-    margin-top: 20px;
-    margin-left: 40px;
+    font-size: 480%;
+    margin-top: 48px;
+    margin-left: 20px;
   }
 }
