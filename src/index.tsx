@@ -29,6 +29,13 @@ class Game extends React.Component<GameProps, GameState> {
             <div id="logo">
               <b>Simon<span id="sup">&reg;</span></b>
             </div>
+            <div id="switch">
+              <b id="OFF">OFF</b>      
+              <div id="contain">
+                <div id="thing" />
+              </div>
+              <b id="ON">ON</b> 
+            </div>
           </div>
         </div>
       </div>

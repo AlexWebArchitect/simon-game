@@ -41,7 +41,7 @@ body {
   height: 150px;
   margin-top: 65px;
   margin-left: 65px;
-  background-color: white;
+  background-color: #ece7ee;
   z-index: 5;
 }
 
@@ -124,6 +124,52 @@ body {
   vertical-align: super;
 }
 
+#switch {
+  display: flex;
+  flex-direction: row;
+  margin-top: 44px;
+  margin-left: 42px;
+}
+
+#OFF {
+  font-size: 45%;
+  margin-right: 3px;
+  margin-top: 4.5px;
+  display: inline-block;
+  transform: scale(1,2);
+  -webkit-transform: scale(1,2);
+  -moz-transform: scale(1,2);
+  -ms-transform: scale(1,2);
+  -o-transform: scale(1,2);
+}
+
+#ON {
+  font-size: 45%;
+  margin-left: 3px;
+  margin-top: 4.5px;
+  display: inline-block;
+  transform: scale(1,2);
+  -webkit-transform: scale(1,2);
+  -moz-transform: scale(1,2);
+  -ms-transform: scale(1,2);
+  -o-transform: scale(1,2);
+}
+
+#contain {
+  background: #222222;
+  border-radius: 10%;
+  width: 30px;
+  height: 15px;
+}
+
+#thing {
+  background: #3193de;
+  width: 11.5px;
+  height: 11.5px;
+  margin-top: 1.5px;
+  margin-left: 1.5px; 
+}
+
 @media all and (min-width: 700px) {
   #circle {
     border: 20px solid #333333;
@@ -193,5 +239,32 @@ body {
     font-size: 480%;
     margin-top: 48px;
     margin-left: 20px;
+  }
+
+  #switch {
+    margin-top: 88px;
+    margin-left: 84px;
+  }
+  
+  #OFF {
+    font-size: 90%;
+    margin-top: 9px;
+  }
+  
+  #ON {
+    font-size: 90%;
+    margin-top: 9px;
+  }
+  
+  #contain {
+    width: 60px;
+    height: 30px;
+  }
+  
+  #thing {
+    width: 23px;
+    height: 23px;
+    margin-top: 3px;
+    margin-left: 3px; 
   }
 }
