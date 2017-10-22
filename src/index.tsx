@@ -27,7 +27,18 @@ class Game extends React.Component<GameProps, GameState> {
           <div id="quarter-circle-top-left" />
           <div id="control">
             <div id="logo">
-              <b>Simon<span id="sup">&reg;</span></b>
+              <b>Simon<span id="reg">&reg;</span></b>
+            </div>
+            <div id="ind" />
+            <div id="main">
+              <div id="count">--</div>
+              <div id="start" />
+              <div id="strict" />
+            </div>
+            <div id="sign">
+              <div id="COUNT">COUNT</div>
+              <div id="START">START</div>
+              <div id="STRICT">STRICT</div>
             </div>
             <div id="switch">
               <b id="OFF">OFF</b>      
