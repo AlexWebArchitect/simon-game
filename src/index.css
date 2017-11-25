@@ -175,6 +175,16 @@ body {
   margin-left: 1.5px; 
 }
 
+#count {
+  background: #32050c;
+  color: #430710;
+  border: 2px solid #333333;
+  border-radius: 23%;
+  width: 35px;
+  height: 23px;
+  margin-left: 15px;
+}
+
 @media all and (min-width: 700px) {
   #circle {
     border: 20px solid #333333;
@@ -271,5 +281,12 @@ body {
     height: 23px;
     margin-top: 3px;
     margin-left: 3px; 
+  }
+
+  #count {
+    border: 4px solid #333333;
+    width: 70px;
+    height: 52px;
+    margin-left: 30px;
   }
 }
