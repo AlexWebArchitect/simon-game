@@ -199,6 +199,17 @@ body {
   margin-left: 12px;
 }
 
+#diod {
+  position: absolute;
+  background: #370d14;
+  border: 1px solid #272727;
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  margin-top: 65px;
+  margin-left: 99px;
+}
+
 #strict {
   background: #fffc4a;
   border: 2.5px solid #464646;
@@ -325,7 +336,15 @@ body {
     margin-top: 6.5px;
     margin-left: 24px;
   }
-  
+
+  #diod {
+    border: 2px solid #272727;
+    width: 14px;
+    height: 14px;
+    margin-top: 130px;
+    margin-left: 198px;
+  }
+    
   #strict {
     border: 5px solid #464646;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
