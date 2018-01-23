@@ -112,6 +112,14 @@ body {
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
 
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url(https://fonts.gstatic.com/s/oswald/v16/pEobIV_lL25TKBpqVI_a2w.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+
 #logo {
   font-size: 240%;
   margin-top: 24px;
@@ -132,7 +140,7 @@ body {
 #switch {
   display: flex;
   flex-direction: row;
-  margin-top: 44px;
+  margin-top: 7px;
   margin-left: 42px;
 }
 
@@ -221,6 +229,32 @@ body {
   margin-left: 12px;
 }
 
+#sign {
+  display: flex;
+  flex-direction: row;
+}
+
+#COUNT {
+  font-family: Oswald, Arial, sans;
+  font-size: 55%;
+  margin-top: 3px;
+  margin-left: 24px;
+}
+
+#START {
+  font-family: Oswald, Arial, sans;
+  font-size: 55%;
+  margin-top: 3px;
+  margin-left: 19px;
+}
+
+#STRICT {
+  font-family: Oswald, Arial, sans;
+  font-size: 55%;
+  margin-top: 3px;
+  margin-left: 13px;
+}
+
 @media all and (min-width: 700px) {
   #circle {
     border: 20px solid #333333;
@@ -293,7 +327,7 @@ body {
   }
 
   #switch {
-    margin-top: 88px;
+    margin-top: 14px;
     margin-left: 84px;
   }
   
@@ -352,5 +386,23 @@ body {
     height: 38px;
     margin-top: 6.5px;
     margin-left: 24px;
+  }
+
+  #COUNT {
+    font-size: 110%;
+    margin-top: 6px;
+    margin-left: 48px;
+  }
+  
+  #START {
+    font-size: 110%;
+    margin-top: 6px;
+    margin-left: 38px;
+  }
+  
+  #STRICT {
+    font-size: 110%;
+    margin-top: 6px;
+    margin-left: 26px;
   }
 }
