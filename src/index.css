@@ -228,6 +228,10 @@ body {
   margin-left: 12px;
 }
 
+#start:active {
+  transform: translateY(1px);
+}
+
 #diod {
   position: absolute;
   background: #370d14;
@@ -248,6 +252,10 @@ body {
   height: 19px;
   margin-top: 3.25px;
   margin-left: 12px;
+}
+
+#strict:active {
+  transform: translateY(1px);
 }
 
 #sign {
