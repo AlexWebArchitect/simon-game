@@ -232,9 +232,20 @@ body {
   transform: translateY(1px);
 }
 
-#diod {
+#strictOFF {
   position: absolute;
   background: #370d14;
+  border: 1px solid #272727;
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  margin-top: 65px;
+  margin-left: 99px;
+}
+
+#strictON {
+  position: absolute;
+  background: #e20930;
   border: 1px solid #272727;
   border-radius: 50%;
   width: 7px;
@@ -416,7 +427,15 @@ body {
     margin-left: 24px;
   }
 
-  #diod {
+  #strictOFF {
+    border: 2px solid #272727;
+    width: 14px;
+    height: 14px;
+    margin-top: 130px;
+    margin-left: 198px;
+  }
+
+  #strictON {
     border: 2px solid #272727;
     width: 14px;
     height: 14px;
