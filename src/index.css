@@ -175,7 +175,7 @@ body {
   height: 15px;
 }
 
-#thing {
+#thingOFF {
   background: #3193de;
   width: 11.5px;
   height: 11.5px;
@@ -183,9 +183,30 @@ body {
   margin-left: 1.5px; 
 }
 
-#count {
+#thingON {
+  background: #3193de;
+  width: 11.5px;
+  height: 11.5px;
+  margin-top: 1.5px;
+  margin-left: 17px; 
+}
+
+#countOFF {
   background: #32050c;
   color: #430710;
+  border: 2px solid #333333;
+  border-radius: 23%;
+  width: 35px;
+  height: 23px;
+  margin-left: 15px;
+  font-size: 100%;
+  padding-left: 10px;
+  letter-spacing: 3px;
+}
+
+#countON {
+  background: #32050c;
+  color: #e20930;
   border: 2px solid #333333;
   border-radius: 23%;
   width: 35px;
@@ -346,14 +367,30 @@ body {
     height: 30px;
   }
   
-  #thing {
+  #thingOFF {
     width: 23px;
     height: 23px;
     margin-top: 3px;
     margin-left: 3px; 
   }
 
-  #count {
+  #thingON {
+    width: 23px;
+    height: 23px;
+    margin-top: 3px;
+    margin-left: 34px; 
+  }
+
+  #countOFF {
+    border: 4px solid #333333;
+    width: 70px;
+    height: 52px;
+    margin-left: 30px;
+    font-size: 200%;
+    padding-left: 20px;
+  }
+
+  #countON {
     border: 4px solid #333333;
     width: 70px;
     height: 52px;

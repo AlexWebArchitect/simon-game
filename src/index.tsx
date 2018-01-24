@@ -5,14 +5,36 @@ import './index.css';
 // ========================================
 
 interface GameProps { }
-interface GameState { }
+interface GameState {
+  ON: boolean;
+  thing: string;
+  count: string;
+}
 
 class Game extends React.Component<GameProps, GameState> {
   constructor() {
     super();
     this.state = {
-
+      ON: false,
+      thing: 'thingOFF',
+      count: 'countOFF'
     };
+  }
+
+  switch() {
+    if (this.state.ON) {
+      this.setState({
+        ON: false,
+        thing: 'thingOFF',
+        count: 'countOFF'
+      });
+    } else {
+      this.setState({
+        ON: true,
+        thing: 'thingON',
+        count: 'countON'
+      });
+    }
   }
 
   render() {
@@ -31,7 +53,7 @@ class Game extends React.Component<GameProps, GameState> {
               <b>Simon<span id="reg">&reg;</span></b>
             </div>
             <div id="main">
-              <div id="count">--</div>
+              <div id={this.state.count}>--</div>
               <div id="start" />  
               <div id="strict" />
             </div>
@@ -42,8 +64,8 @@ class Game extends React.Component<GameProps, GameState> {
             </div>
             <div id="switch">
               <b id="OFF">OFF</b>      
-              <div id="contain">
-                <div id="thing" />
+              <div id="contain" onClick={() => this.switch()}>
+                <div id={this.state.thing} />
               </div>
               <b id="ON">ON</b> 
             </div>
