@@ -54,6 +54,21 @@ class Game extends React.Component<GameProps, GameState> {
     }
   }
 
+  start() {
+    if (this.state.ON) {
+      let d1, d2, d3, d4, d5;
+      d1 = setTimeout(() => { this.setState({ count: 'countOFF' }); }, 250);
+      d2 = setTimeout(() => { this.setState({ count: 'countON' }); }, 500);
+      d3 = setTimeout(() => { this.setState({ count: 'countOFF' }); }, 750);
+      d4 = setTimeout(() => { this.setState({ count: 'countON' }); }, 1000);
+      d5 = setTimeout(() => { this.game(); }, 2000);
+    }
+  }
+
+  game() {
+    console.log('start');
+  }
+
   render() {
     return (
       <div id="game">
@@ -71,7 +86,7 @@ class Game extends React.Component<GameProps, GameState> {
             </div>
             <div id="main">
               <div id={this.state.count}>--</div>
-              <div id="start" />  
+              <div id="start" onClick={() => this.start()} />  
               <div id="strict" onClick={() => this.strict()} />
             </div>
             <div id="sign">
