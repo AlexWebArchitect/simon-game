@@ -67,6 +67,7 @@ class Game extends React.Component<GameProps, GameState> {
 
   game() {
     console.log('start');
+    
   }
 
   render() {
