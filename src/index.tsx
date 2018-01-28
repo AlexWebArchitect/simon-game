@@ -10,6 +10,7 @@ interface GameState {
   thing: string;
   count: string;
   strict: string;
+  display: string;
 }
 
 class Game extends React.Component<GameProps, GameState> {
@@ -19,7 +20,8 @@ class Game extends React.Component<GameProps, GameState> {
       ON: false,
       thing: 'thingOFF',
       count: 'countOFF',
-      strict: 'strictOFF'
+      strict: 'strictOFF',
+      display: '--'
     };
   }
 
@@ -29,7 +31,8 @@ class Game extends React.Component<GameProps, GameState> {
         ON: false,
         thing: 'thingOFF',
         count: 'countOFF',
-        strict: 'strictOFF'
+        strict: 'strictOFF',
+        display: '--'
       });
     } else {
       this.setState({
@@ -57,6 +60,7 @@ class Game extends React.Component<GameProps, GameState> {
   start() {
     if (this.state.ON) {
       let d1, d2, d3, d4, d5;
+      this.setState({ display: '--' });
       d1 = setTimeout(() => { this.setState({ count: 'countOFF' }); }, 250);
       d2 = setTimeout(() => { this.setState({ count: 'countON' }); }, 500);
       d3 = setTimeout(() => { this.setState({ count: 'countOFF' }); }, 750);
@@ -66,7 +70,7 @@ class Game extends React.Component<GameProps, GameState> {
   }
 
   game() {
-    console.log('start');
+    this.setState({ display: '01' });
   }
 
   render() {
@@ -85,7 +89,7 @@ class Game extends React.Component<GameProps, GameState> {
               <b>Simon<span id="reg">&reg;</span></b>
             </div>
             <div id="main">
-              <div id={this.state.count}>--</div>
+              <div id={this.state.count}>{this.state.display}</div>
               <div id="start" onClick={() => this.start()} />  
               <div id="strict" onClick={() => this.strict()} />
             </div>
