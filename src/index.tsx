@@ -60,7 +60,7 @@ class Game extends React.Component<GameProps, GameState> {
   start() {
     if (this.state.ON) {
       let d1, d2, d3, d4, d5;
-      this.setState({ display: '--' });
+      this.setState({ display: '--', count: 'countON' });
       d1 = setTimeout(() => { this.setState({ count: 'countOFF' }); }, 250);
       d2 = setTimeout(() => { this.setState({ count: 'countON' }); }, 500);
       d3 = setTimeout(() => { this.setState({ count: 'countOFF' }); }, 750);
@@ -70,7 +70,7 @@ class Game extends React.Component<GameProps, GameState> {
   }
 
   game() {
-    this.setState({ display: '01' });
+    this.setState({ count: 'counter', display: '01' });
   }
 
   render() {
