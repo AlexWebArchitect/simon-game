@@ -56,7 +56,7 @@ body {
   z-index: 4; 
 }
 
-#quarter-circle-bottom-right {
+.quarter-circle-bottom-right {
   position: absolute;
   width: 140px;
   height: 140px;
@@ -69,7 +69,11 @@ body {
   margin-left: 140px;
 }
 
-#quarter-circle-bottom-left {
+.br:active {
+  background: #008ff9;
+}
+
+.quarter-circle-bottom-left {
   position: absolute;
   margin-top: 140px;
   margin-right: 20px;
@@ -82,7 +86,11 @@ body {
   z-index: 2;
 }
 
-#quarter-circle-top-right {
+.bl:active {
+  background: #ffd657;
+}
+
+.quarter-circle-top-right {
   position: absolute;
   width: 140px;
   height: 140px;
@@ -94,7 +102,11 @@ body {
   margin-left: 140px;
 }
 
-#quarter-circle-top-left {
+.tr:active {
+  background: #ff4b50;
+}
+
+.quarter-circle-top-left {
   position: absolute;
   width: 140px;
   height: 140px;
@@ -103,6 +115,10 @@ body {
   -moz-border-radius: 140px 0 0 0;
   -webkit-border-radius: 140px 0 0 0;
   z-index: 2;
+}
+
+.tl:active {
+  background: #00fd87;
 }
 
 @font-face {
@@ -349,7 +365,7 @@ body {
     height: 20px;
   }
 
-  #quarter-circle-bottom-right {
+  .quarter-circle-bottom-right {
     width: 280px;
     height: 280px;
     border-radius: 0 0 280px 0;
@@ -359,7 +375,7 @@ body {
     margin-left: 280px;
   }
 
-  #quarter-circle-bottom-left {
+  .quarter-circle-bottom-left {
     margin-top: 280px;
     margin-right: 40px;
     width: 280px;
@@ -369,7 +385,7 @@ body {
     -webkit-border-radius: 0 0 0 280px;
   }
 
-  #quarter-circle-top-right {
+  .quarter-circle-top-right {
     width: 280px;
     height: 280px;
     border-radius: 0 280px 0 0;
@@ -378,7 +394,7 @@ body {
     margin-left: 280px;
   }
 
-  #quarter-circle-top-left {
+  .quarter-circle-top-left {
     width: 280px;
     height: 280px;
     border-radius: 280px 0 0 0;

@@ -11,6 +11,10 @@ interface GameState {
   count: string;
   strict: string;
   display: string;
+  br: string;
+  bl: string;
+  tr: string;
+  tl: string;
 }
 
 class Game extends React.Component<GameProps, GameState> {
@@ -21,7 +25,11 @@ class Game extends React.Component<GameProps, GameState> {
       thing: 'thingOFF',
       count: 'countOFF',
       strict: 'strictOFF',
-      display: '--'
+      display: '--',
+      br: 'quarter-circle-bottom-right',
+      bl: 'quarter-circle-bottom-left',
+      tr: 'quarter-circle-top-right',
+      tl: 'quarter-circle-top-left'
     };
   }
 
@@ -32,7 +40,11 @@ class Game extends React.Component<GameProps, GameState> {
         thing: 'thingOFF',
         count: 'countOFF',
         strict: 'strictOFF',
-        display: '--'
+        display: '--',
+        br: 'quarter-circle-bottom-right',
+        bl: 'quarter-circle-bottom-left',
+        tr: 'quarter-circle-top-right',
+        tl: 'quarter-circle-top-left'
       });
     } else {
       this.setState({
@@ -70,7 +82,14 @@ class Game extends React.Component<GameProps, GameState> {
   }
 
   game() {
-    this.setState({ count: 'counter', display: '01' });
+    this.setState({ 
+      count: 'counter', 
+      display: '01',
+      br: 'quarter-circle-bottom-right br',
+      bl: 'quarter-circle-bottom-left bl',
+      tr: 'quarter-circle-top-right tr',
+      tl: 'quarter-circle-top-left tl'
+    });
   }
 
   render() {
@@ -79,10 +98,10 @@ class Game extends React.Component<GameProps, GameState> {
         <div id="circle">
           <div id="vertical" />
           <div id="horizontal" />
-          <div id="quarter-circle-bottom-right" />
-          <div id="quarter-circle-bottom-left" />
-          <div id="quarter-circle-top-right" />
-          <div id="quarter-circle-top-left" />
+          <div className={this.state.br} />
+          <div className={this.state.bl} />
+          <div className={this.state.tr} />
+          <div className={this.state.tl} />
           <div id="control">
             <div id={this.state.strict} />
             <div id="logo">
