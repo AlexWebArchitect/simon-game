@@ -11,10 +11,12 @@ interface GameState {
   count: string;
   strict: string;
   display: string;
-  br: string;
-  bl: string;
-  tr: string;
   tl: string;
+  tr: string;
+  bl: string;
+  br: string;
+  intervalID: number;
+  steps: Array<number>;
 }
 
 class Game extends React.Component<GameProps, GameState> {
@@ -26,10 +28,12 @@ class Game extends React.Component<GameProps, GameState> {
       count: 'countOFF',
       strict: 'strictOFF',
       display: '--',
-      br: 'quarter-circle-bottom-right',
-      bl: 'quarter-circle-bottom-left',
+      tl: 'quarter-circle-top-left',
       tr: 'quarter-circle-top-right',
-      tl: 'quarter-circle-top-left'
+      bl: 'quarter-circle-bottom-left',
+      br: 'quarter-circle-bottom-right',
+      intervalID: 0,
+      steps: []
     };
   }
 
@@ -41,10 +45,10 @@ class Game extends React.Component<GameProps, GameState> {
         count: 'countOFF',
         strict: 'strictOFF',
         display: '--',
-        br: 'quarter-circle-bottom-right',
-        bl: 'quarter-circle-bottom-left',
+        tl: 'quarter-circle-top-left',
         tr: 'quarter-circle-top-right',
-        tl: 'quarter-circle-top-left'
+        bl: 'quarter-circle-bottom-left',
+        br: 'quarter-circle-bottom-right'
       });
     } else {
       this.setState({
@@ -85,11 +89,26 @@ class Game extends React.Component<GameProps, GameState> {
     this.setState({ 
       count: 'counter', 
       display: '01',
-      br: 'quarter-circle-bottom-right br',
-      bl: 'quarter-circle-bottom-left bl',
+      tl: 'quarter-circle-top-left tl',
       tr: 'quarter-circle-top-right tr',
-      tl: 'quarter-circle-top-left tl'
+      bl: 'quarter-circle-bottom-left bl',
+      br: 'quarter-circle-bottom-right br',
+      intervalID: 0,
+      steps: []
     });
+    this.animation(randm());
+  }
+
+  animation(add: number) {
+    let intervalID;
+    intervalID = setInterval(() => {
+      add = add + 1;
+      if (add > 10) {
+        clearInterval(this.state.intervalID);
+      }
+      console.log(add);
+    }, 1000);
+    this.setState({ intervalID: intervalID });
   }
 
   render() {
@@ -98,10 +117,10 @@ class Game extends React.Component<GameProps, GameState> {
         <div id="circle">
           <div id="vertical" />
           <div id="horizontal" />
-          <div className={this.state.br} />
-          <div className={this.state.bl} />
-          <div className={this.state.tr} />
           <div className={this.state.tl} />
+          <div className={this.state.tr} />
+          <div className={this.state.bl} />
+          <div className={this.state.br} />
           <div id="control">
             <div id={this.state.strict} />
             <div id="logo">
@@ -129,6 +148,10 @@ class Game extends React.Component<GameProps, GameState> {
       </div>
     );
   }
+}
+
+function randm() {
+  return Math.floor(Math.random() * 4) + 1;
 }
 
 ReactDOM.render(<Game />, document.getElementById('root'));
