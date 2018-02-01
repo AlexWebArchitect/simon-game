@@ -101,6 +101,29 @@ class Game extends React.Component<GameProps, GameState> {
 
   animation(add: number) {
     let intervalID;
+    let steps = this.state.steps;
+    steps.push(add);
+    let d;
+    switch (steps[0]) {
+      case 1:
+        this.setState({ tl: 'qctl' });
+        d = setTimeout(() => { this.setState({ tl: 'quarter-circle-top-left tl' }); }, 500);
+        break;
+      case 2:
+        this.setState({ tr: 'qctr' });
+        d = setTimeout(() => { this.setState({ tr: 'quarter-circle-top-right tr' }); }, 500);
+        break;
+      case 3:
+        this.setState({ bl: 'qcbl' });
+        d = setTimeout(() => { this.setState({ bl: 'quarter-circle-bottom-left bl' }); }, 500);
+        break;
+      case 4:
+        this.setState({ br: 'qcbr' });
+        d = setTimeout(() => { this.setState({ br: 'quarter-circle-bottom-right br' }); }, 500);
+        break;
+      default:
+      break;
+    }
     intervalID = setInterval(() => {
       add = add + 1;
       if (add > 10) {

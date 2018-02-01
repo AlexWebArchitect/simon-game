@@ -73,6 +73,19 @@ body {
   background: #008ff9;
 }
 
+.qcbr {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: #008ff9;
+  border-radius: 0 0 140px 0;
+  -moz-border-radius: 0 0 140px 0;
+  -webkit-border-radius: 0 0 140px 0;
+  z-index: 2;
+  margin-top: 140px;
+  margin-left: 140px;
+}
+
 .quarter-circle-bottom-left {
   position: absolute;
   margin-top: 140px;
@@ -88,6 +101,19 @@ body {
 
 .bl:active {
   background: #ffd657;
+}
+
+.qcbl {
+  position: absolute;
+  margin-top: 140px;
+  margin-right: 20px;
+  width: 140px;
+  height: 140px;
+  background: #ffd657;
+  border-radius: 0 0 0 140px;
+  -moz-border-radius: 0 0 0 140px;
+  -webkit-border-radius: 0 0 0 140px;
+  z-index: 2;
 }
 
 .quarter-circle-top-right {
@@ -106,6 +132,18 @@ body {
   background: #ff4b50;
 }
 
+.qctr {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: #ff4b50;
+  border-radius: 0 140px 0 0;
+  -moz-border-radius: 0 140px 0 0;
+  -webkit-border-radius: 0 140px 0 0;
+  z-index: 2;
+  margin-left: 140px;
+}
+
 .quarter-circle-top-left {
   position: absolute;
   width: 140px;
@@ -119,6 +157,17 @@ body {
 
 .tl:active {
   background: #00fd87;
+}
+
+.qctl {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: #00fd87;
+  border-radius: 140px 0 0 0;
+  -moz-border-radius: 140px 0 0 0;
+  -webkit-border-radius: 140px 0 0 0;
+  z-index: 2;
 }
 
 @font-face {
@@ -375,7 +424,27 @@ body {
     margin-left: 280px;
   }
 
+  .qcbr {
+    width: 280px;
+    height: 280px;
+    border-radius: 0 0 280px 0;
+    -moz-border-radius: 0 0 280px 0;
+    -webkit-border-radius: 0 0 280px 0;
+    margin-top: 280px;
+    margin-left: 280px;
+  }
+
   .quarter-circle-bottom-left {
+    margin-top: 280px;
+    margin-right: 40px;
+    width: 280px;
+    height: 280px;
+    border-radius: 0 0 0 280px;
+    -moz-border-radius: 0 0 0 280px;
+    -webkit-border-radius: 0 0 0 280px;
+  }
+
+  .qcbl {
     margin-top: 280px;
     margin-right: 40px;
     width: 280px;
@@ -394,7 +463,24 @@ body {
     margin-left: 280px;
   }
 
+  .qctr {
+    width: 280px;
+    height: 280px;
+    border-radius: 0 280px 0 0;
+    -moz-border-radius: 0 280px 0 0;
+    -webkit-border-radius: 0 280px 0 0;
+    margin-left: 280px;
+  }
+
   .quarter-circle-top-left {
+    width: 280px;
+    height: 280px;
+    border-radius: 280px 0 0 0;
+    -moz-border-radius: 280px 0 0 0;
+    -webkit-border-radius: 280px 0 0 0;
+  }
+
+  .qctl {
     width: 280px;
     height: 280px;
     border-radius: 280px 0 0 0;
