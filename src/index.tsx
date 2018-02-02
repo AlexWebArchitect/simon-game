@@ -123,6 +123,7 @@ class Game extends React.Component<GameProps, GameState> {
         break;
       default:
       break;
+      
     }
     intervalID = setInterval(() => {
       add = add + 1;
