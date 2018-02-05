@@ -17,6 +17,7 @@ interface GameState {
   br: string;
   intervalID: number;
   steps: Array<number>;
+  presses: number;
 }
 
 class Game extends React.Component<GameProps, GameState> {
@@ -33,7 +34,8 @@ class Game extends React.Component<GameProps, GameState> {
       bl: 'quarter-circle-bottom-left',
       br: 'quarter-circle-bottom-right',
       intervalID: 0,
-      steps: []
+      steps: [],
+      presses: 0
     };
   }
 
@@ -134,16 +136,43 @@ class Game extends React.Component<GameProps, GameState> {
     this.setState({ intervalID: intervalID });
   }
 
+  handlePress(pressed: string) {
+    let presses = this.state.presses + 1;
+    const steps = this.state.steps;
+    if (this.state.ON) {
+      switch (pressed) {
+        case 'tl':
+          this.setState({ tl: 'qctl' });
+          d = setTimeout(() => { this.setState({ tl: 'quarter-circle-top-left tl' }); }, 500);
+          break;
+        case 'tr':
+          this.setState({ tr: 'qctr' });
+          d = setTimeout(() => { this.setState({ tr: 'quarter-circle-top-right tr' }); }, 500);
+          break;
+        case 'bl':
+          this.setState({ bl: 'qcbl' });
+          d = setTimeout(() => { this.setState({ bl: 'quarter-circle-bottom-left bl' }); }, 500);
+          break;
+        case 'br':
+          this.setState({ br: 'qcbr' });
+          d = setTimeout(() => { this.setState({ br: 'quarter-circle-bottom-right br' }); }, 500);
+          break;
+        default:
+        break;
+      }
+    }
+  }
+
   render() {
     return (
       <div id="game">
         <div id="circle">
           <div id="vertical" />
           <div id="horizontal" />
-          <div className={this.state.tl} />
-          <div className={this.state.tr} />
-          <div className={this.state.bl} />
-          <div className={this.state.br} />
+          <div className={this.state.tl} onClick={() => this.handlePress('tl')} />
+          <div className={this.state.tr} onClick={() => this.handlePress('tr')} />
+          <div className={this.state.bl} onClick={() => this.handlePress('bl')} />
+          <div className={this.state.br} onClick={() => this.handlePress('br')} />
           <div id="control">
             <div id={this.state.strict} />
             <div id="logo">
