@@ -102,63 +102,54 @@ class Game extends React.Component<GameProps, GameState> {
   }
 
   animation(add: number) {
-    let intervalID;
     let steps = this.state.steps;
+    let d, d1;
+    let intervalID;
+    let c = 0;
     steps.push(add);
-    let d;
-    switch (steps[0]) {
-      case 1:
-        this.setState({ tl: 'qctl' });
-        d = setTimeout(() => { this.setState({ tl: 'quarter-circle-top-left tl' }); }, 500);
-        break;
-      case 2:
-        this.setState({ tr: 'qctr' });
-        d = setTimeout(() => { this.setState({ tr: 'quarter-circle-top-right tr' }); }, 500);
-        break;
-      case 3:
-        this.setState({ bl: 'qcbl' });
-        d = setTimeout(() => { this.setState({ bl: 'quarter-circle-bottom-left bl' }); }, 500);
-        break;
-      case 4:
-        this.setState({ br: 'qcbr' });
-        d = setTimeout(() => { this.setState({ br: 'quarter-circle-bottom-right br' }); }, 500);
-        break;
-      default:
-      break;
+    let display = steps.length + '';
+    if (display.split('').length < 2) {
+        display = '0' + steps.length;
     }
+    d = setTimeout(() => { this.setState({ steps: steps, display: display }); }, 200);
     intervalID = setInterval(() => {
-      add = add + 1;
-      if (add > 10) {
+      switch (steps[c]) {
+        case 1:
+          this.setState({ tl: 'qctl' });
+          d1 = setTimeout(() => { this.setState({ tl: 'quarter-circle-top-left tl' }); }, 500);
+          break;
+        case 2:
+          this.setState({ tr: 'qctr' });
+          d1 = setTimeout(() => { this.setState({ tr: 'quarter-circle-top-right tr' }); }, 500);
+          break;
+        case 3:
+          this.setState({ bl: 'qcbl' });
+          d1 = setTimeout(() => { this.setState({ bl: 'quarter-circle-bottom-left bl' }); }, 500);
+          break;
+        case 4:
+          this.setState({ br: 'qcbr' });
+          d1 = setTimeout(() => { this.setState({ br: 'quarter-circle-bottom-right br' }); }, 500);
+          break;
+        default:
+        break;
+      }
+      c = c + 1;
+      if (c === steps.length) {
         clearInterval(this.state.intervalID);
       }
-      console.log(add);
     }, 1000);
     this.setState({ intervalID: intervalID });
   }
 
-  handlePress(pressed: string) {
+  handlePress(pressed: number) {
     let presses = this.state.presses + 1;
     const steps = this.state.steps;
     if (this.state.ON) {
-      switch (pressed) {
-        case 'tl':
-          this.setState({ tl: 'qctl' });
-          d = setTimeout(() => { this.setState({ tl: 'quarter-circle-top-left tl' }); }, 500);
-          break;
-        case 'tr':
-          this.setState({ tr: 'qctr' });
-          d = setTimeout(() => { this.setState({ tr: 'quarter-circle-top-right tr' }); }, 500);
-          break;
-        case 'bl':
-          this.setState({ bl: 'qcbl' });
-          d = setTimeout(() => { this.setState({ bl: 'quarter-circle-bottom-left bl' }); }, 500);
-          break;
-        case 'br':
-          this.setState({ br: 'qcbr' });
-          d = setTimeout(() => { this.setState({ br: 'quarter-circle-bottom-right br' }); }, 500);
-          break;
-        default:
-        break;
+      if (steps[presses - 1] === pressed) {
+        console.log('true');
+        this.animation(randm());
+      } else {
+        console.log('!!');
       }
     }
   }
@@ -169,10 +160,10 @@ class Game extends React.Component<GameProps, GameState> {
         <div id="circle">
           <div id="vertical" />
           <div id="horizontal" />
-          <div className={this.state.tl} onClick={() => this.handlePress('tl')} />
-          <div className={this.state.tr} onClick={() => this.handlePress('tr')} />
-          <div className={this.state.bl} onClick={() => this.handlePress('bl')} />
-          <div className={this.state.br} onClick={() => this.handlePress('br')} />
+          <div className={this.state.tl} onClick={() => this.handlePress(1)} />
+          <div className={this.state.tr} onClick={() => this.handlePress(2)} />
+          <div className={this.state.bl} onClick={() => this.handlePress(3)} />
+          <div className={this.state.br} onClick={() => this.handlePress(4)} />
           <div id="control">
             <div id={this.state.strict} />
             <div id="logo">
