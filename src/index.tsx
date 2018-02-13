@@ -96,22 +96,33 @@ class Game extends React.Component<GameProps, GameState> {
       bl: 'quarter-circle-bottom-left bl',
       br: 'quarter-circle-bottom-right br',
       intervalID: 0,
-      steps: []
+      steps: [],
+      presses: 0
     });
     this.animation(randm());
   }
 
   animation(add: number) {
     let steps = this.state.steps;
-    let d, d1;
+    let d, d1, p1, p2, p3, p4;
     let intervalID;
     let c = 0;
-    steps.push(add);
+    let a = 0;
+    if (add === 0) {
+      a = 1000;
+      this.setState({ display: '!!' });
+      p1 = setTimeout(() => { this.setState({ count: 'countOFF' }); }, 250);
+      p2 = setTimeout(() => { this.setState({ count: 'countON' }); }, 500);
+      p3 = setTimeout(() => { this.setState({ count: 'countOFF' }); }, 750);
+      p4 = setTimeout(() => { this.setState({ count: 'counter' }); }, 1000);
+    } else {
+      steps.push(add);
+    }
     let display = steps.length + '';
     if (display.split('').length < 2) {
         display = '0' + steps.length;
     }
-    d = setTimeout(() => { this.setState({ steps: steps, display: display }); }, 200);
+    d = setTimeout(() => { this.setState({ steps: steps, display: display, presses: 0 }); }, 200 + a);
     intervalID = setInterval(() => {
       switch (steps[c]) {
         case 1:
@@ -144,13 +155,18 @@ class Game extends React.Component<GameProps, GameState> {
   handlePress(pressed: number) {
     let presses = this.state.presses + 1;
     const steps = this.state.steps;
+    let fail;
     if (this.state.ON) {
       if (steps[presses - 1] === pressed) {
-        console.log('true');
-        this.animation(randm());
+        fail = false;
       } else {
-        console.log('!!');
+        fail = true;
+        this.animation(0);
       }
+      if (!fail && presses === steps.length) {
+        this.animation(randm());
+      }
+      this.setState({ presses: presses });
     }
   }
 
