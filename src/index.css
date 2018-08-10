@@ -2,7 +2,7 @@ body {
   margin: 25px;
   padding: 0;
   font-family: sans-serif;
-  background: url(https://i.imgur.com/i49b44f.jpg);
+  background-image: url(https://i.imgur.com/i49b44f.jpg);
 }
 
 #game {
