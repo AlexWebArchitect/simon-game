@@ -15,7 +15,7 @@ interface GameState {
   tr: string;
   bl: string;
   br: string;
-  intervalID: number;
+  intervalID: any;
   steps: Array<number>;
   presses: number;
 }
