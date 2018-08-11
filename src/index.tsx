@@ -161,13 +161,23 @@ class Game extends React.Component<GameProps, GameState> {
         fail = false;
       } else {
         fail = true;
-        this.animation(0);
+        this.state.strict === 'strictOFF' ? this.animation(0) : this.gg();
       }
       if (!fail && presses === steps.length) {
         this.animation(randm());
       }
       this.setState({ presses: presses });
     }
+  }
+
+  gg() {
+    let p1, p2, p3, p4, p5;
+    this.setState({ display: '!!' });
+    p1 = setTimeout(() => { this.setState({ count: 'countOFF' }); }, 250);
+    p2 = setTimeout(() => { this.setState({ count: 'countON' }); }, 500);
+    p3 = setTimeout(() => { this.setState({ count: 'countOFF' }); }, 750);
+    p4 = setTimeout(() => { this.setState({ count: 'countON' }); }, 1000);
+    p5 = setTimeout(() => { this.start(); }, 1500);
   }
 
   render() {
