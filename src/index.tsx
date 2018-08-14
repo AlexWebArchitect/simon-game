@@ -124,21 +124,26 @@ class Game extends React.Component<GameProps, GameState> {
     }
     d = setTimeout(() => { this.setState({ steps: steps, display: display, presses: 0 }); }, 200 + a);
     intervalID = setInterval(() => {
+      let sound = new Audio(`https://s3.amazonaws.com/freecodecamp/simonSound${steps[c]}.mp3`);
       switch (steps[c]) {
         case 1:
           this.setState({ tl: 'qctl' });
+          sound.play();
           d1 = setTimeout(() => { this.setState({ tl: 'quarter-circle-top-left tl' }); }, 500);
           break;
         case 2:
           this.setState({ tr: 'qctr' });
+          sound.play();
           d1 = setTimeout(() => { this.setState({ tr: 'quarter-circle-top-right tr' }); }, 500);
           break;
         case 3:
           this.setState({ bl: 'qcbl' });
+          sound.play();
           d1 = setTimeout(() => { this.setState({ bl: 'quarter-circle-bottom-left bl' }); }, 500);
           break;
         case 4:
           this.setState({ br: 'qcbr' });
+          sound.play();
           d1 = setTimeout(() => { this.setState({ br: 'quarter-circle-bottom-right br' }); }, 500);
           break;
         default:
@@ -156,7 +161,9 @@ class Game extends React.Component<GameProps, GameState> {
     let presses = this.state.presses + 1;
     const steps = this.state.steps;
     let fail;
-    if (this.state.ON) {
+    let sound = new Audio(`https://s3.amazonaws.com/freecodecamp/simonSound${pressed}.mp3`);
+    sound.play();
+    if (this.state.ON) {  
       if (steps[presses - 1] === pressed) {
         fail = false;
       } else {
