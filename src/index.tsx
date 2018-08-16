@@ -161,17 +161,20 @@ class Game extends React.Component<GameProps, GameState> {
     let presses = this.state.presses + 1;
     const steps = this.state.steps;
     let fail;
-    let sound = new Audio(`https://s3.amazonaws.com/freecodecamp/simonSound${pressed}.mp3`);
-    sound.play();
     if (this.state.ON) {  
+      let sound = new Audio(`https://s3.amazonaws.com/freecodecamp/simonSound${pressed}.mp3`);
+      sound.play();
       if (steps[presses - 1] === pressed) {
         fail = false;
       } else {
         fail = true;
         this.state.strict === 'strictOFF' ? this.animation(0) : this.gg();
       }
-      if (!fail && presses === steps.length) {
+      if (!fail && presses === steps.length && presses !== 20) {
         this.animation(randm());
+      }
+      if (!fail && presses === 20) {
+        this.win();
       }
       this.setState({ presses: presses });
     }
@@ -185,6 +188,80 @@ class Game extends React.Component<GameProps, GameState> {
     p3 = setTimeout(() => { this.setState({ count: 'countOFF' }); }, 750);
     p4 = setTimeout(() => { this.setState({ count: 'countON' }); }, 1000);
     p5 = setTimeout(() => { this.start(); }, 1500);
+  }
+
+  win() {
+    let q1, q2, q3, q4, q5, q6;
+    const button = this.state.steps[this.state.steps.length - 1];
+    let s1, s2, s3, s4, s5, s6, s7;
+    this.setState({ display: '**' });
+    q1 = setTimeout(() => { this.setState({ count: 'countOFF' }); }, 500);
+    q2 = setTimeout(() => { this.setState({ count: 'countON' }); }, 750);
+    q3 = setTimeout(() => { this.setState({ count: 'countOFF' }); }, 1250);
+    q4 = setTimeout(() => { this.setState({ count: 'countON' }); }, 1500);
+    q5 = setTimeout(() => { this.setState({ count: 'countOFF' }); }, 1750);
+    q6 = setTimeout(() => { this.setState({ count: 'countON' }); }, 2250);
+    let sound = new Audio(`https://s3.amazonaws.com/freecodecamp/simonSound${button}.mp3`);
+    switch (button) {
+      case 1:
+        this.setState({ tl: 'qctl' });
+        sound.play();
+        s1 = setTimeout(() => { this.setState({ tl: 'quarter-circle-top-left tl' }); }, 250);
+        s2 = setTimeout(() => { this.setState({ tl: 'qctl' }); }, 500);
+        sound.play();
+        s3 = setTimeout(() => { this.setState({ tl: 'quarter-circle-top-left tl' }); }, 750);
+        s4 = setTimeout(() => { this.setState({ tl: 'qctl' }); }, 1000);
+        sound.play();
+        s5 = setTimeout(() => { this.setState({ tl: 'quarter-circle-top-left tl' }); }, 1250);
+        s6 = setTimeout(() => { this.setState({ tl: 'qctl' }); }, 1500);
+        sound.play();
+        s7 = setTimeout(() => { this.setState({ tl: 'quarter-circle-top-left tl' }); }, 1750);
+        break;
+      case 2:
+        this.setState({ tl: 'qctr' });
+        sound.play();
+        s1 = setTimeout(() => { this.setState({ tl: 'quarter-circle-top-right tr' }); }, 250);
+        s2 = setTimeout(() => { this.setState({ tl: 'qctr' }); }, 500);
+        sound.play();
+        s3 = setTimeout(() => { this.setState({ tl: 'quarter-circle-top-right tr' }); }, 750);
+        s4 = setTimeout(() => { this.setState({ tl: 'qctr' }); }, 1000);
+        sound.play();
+        s5 = setTimeout(() => { this.setState({ tl: 'quarter-circle-top-right tr' }); }, 1250);
+        s6 = setTimeout(() => { this.setState({ tl: 'qctr' }); }, 1500);
+        sound.play();
+        s7 = setTimeout(() => { this.setState({ tl: 'quarter-circle-top-right tr' }); }, 1750);
+        break;
+      case 3:
+        this.setState({ tl: 'qcbl' });
+        sound.play();
+        s1 = setTimeout(() => { this.setState({ tl: 'quarter-circle-bottom-left bl' }); }, 250);
+        s2 = setTimeout(() => { this.setState({ tl: 'qcbl' }); }, 500);
+        sound.play();
+        s3 = setTimeout(() => { this.setState({ tl: 'quarter-circle-bottom-left bl' }); }, 750);
+        s4 = setTimeout(() => { this.setState({ tl: 'qcbl' }); }, 1000);
+        sound.play();
+        s5 = setTimeout(() => { this.setState({ tl: 'quarter-circle-bottom-left bl' }); }, 1250);
+        s6 = setTimeout(() => { this.setState({ tl: 'qcbl' }); }, 1500);
+        sound.play();
+        s7 = setTimeout(() => { this.setState({ tl: 'quarter-circle-bottom-left bl' }); }, 1750);
+        break;
+      case 4:
+        this.setState({ tl: 'qcbr' });
+        sound.play();
+        s1 = setTimeout(() => { this.setState({ tl: 'quarter-circle-bottom-right br' }); }, 250);
+        s2 = setTimeout(() => { this.setState({ tl: 'qcbr' }); }, 500);
+        sound.play();
+        s3 = setTimeout(() => { this.setState({ tl: 'quarter-circle-bottom-right br' }); }, 750);
+        s4 = setTimeout(() => { this.setState({ tl: 'qcbr' }); }, 1000);
+        sound.play();
+        s5 = setTimeout(() => { this.setState({ tl: 'quarter-circle-bottom-right br' }); }, 1250);
+        s6 = setTimeout(() => { this.setState({ tl: 'qcbr' }); }, 1500);
+        sound.play();
+        s7 = setTimeout(() => { this.setState({ tl: 'quarter-circle-bottom-right br' }); }, 1750);
+        break;
+      default:
+      break;
+    }
   }
 
   render() {
